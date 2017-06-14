@@ -1,5 +1,5 @@
 
-memory 1000 mb
+memory 5000 mb
 
 molecule butane {
   symmetry C1
