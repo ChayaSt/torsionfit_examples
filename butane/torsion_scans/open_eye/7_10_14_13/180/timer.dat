@@ -1,0 +1,82 @@
+
+Host: cpu-6-2.local
+
+Timers On : Wed Jun 14 14:52:58 2017
+Timers Off: Wed Jun 14 18:29:24 2017
+
+Wall Time:    12986.00 seconds
+
+JK: (A|mn)  :    1185.21u       0.00s    1184.56w    102 calls
+JK: (A|Q)^-1/2:      63.12u       0.17s      63.27w    102 calls
+JK: (Q|mn)  :     682.35u       0.01s     681.99w    102 calls
+HF: Form H  :       0.18u       0.04s   0.239160w     50 calls
+HF: Form S/X:       3.94u       0.00s   3.949775w     50 calls
+HF: Guess   :       0.24u       0.00s   0.279644w     50 calls
+SAD Guess   :       0.23u       0.00s 0.22868300w      1 call
+JK: D       :       1.55u       0.00s   1.572411w   1206 calls
+JK: USO2AO  :       0.57u       0.00s   0.381556w   1206 calls
+JK: JK      :    4835.93u      23.81s    4857.30w   1206 calls
+JK: J       :     132.19u       0.03s     132.08w   1356 calls
+JK: J1      :      63.36u       0.00s      63.54w   1615 calls
+JK: J2      :      66.98u       0.00s      66.84w   1615 calls
+JK: K       :    4684.95u       0.02s    4682.73w   1356 calls
+JK: K1      :    3749.17u       0.01s    3747.28w   2125 calls
+JK: K2      :     935.55u       0.00s     935.25w   1613 calls
+JK: AO2USO  :       0.00u       0.00s   0.001731w   1206 calls
+DIISManager::add_entry:       0.27u       1.34s   1.610061w    544 calls
+DIISManager::extrapolate:       1.20u       1.70s   2.922641w    494 calls
+DIISManager::extrapolate: bMatrix setup:       0.25u       1.00s   1.315910w    494 calls
+DIISManager::extrapolate: bMatrix pseudoinverse:       0.02u       0.00s   0.070532w    494 calls
+DIISManager::extrapolate: form new data:       0.92u       0.69s   1.530188w    494 calls
+HF: Form G  :    1285.78u       6.05s    1291.16w    585 calls
+HF: Form F  :       0.32u       0.00s   0.239753w    585 calls
+HF: DIIS    :      20.02u       3.04s      23.06w    585 calls
+HF: Form C  :      53.58u       0.00s      53.59w    585 calls
+HF: Form D  :       0.45u       0.00s   0.402172w    585 calls
+DFMP2 Singles:       0.96u       0.00s   0.941069w     50 calls
+DFMP2 Aia   :     405.67u      10.45s     415.93w     50 calls
+DFMP2 (A|mn):     334.88u       0.00s     334.74w    100 calls
+DFMP2 (A|mn)C_mi:      24.74u       0.00s      24.71w    100 calls
+DFMP2 (A|mi)C_na:      18.62u       0.00s      18.58w    100 calls
+DFMP2 Aia Write:       0.00u       2.20s   2.247780w    100 calls
+DFMP2 iaQ   :      87.31u       7.98s      95.29w     50 calls
+DFMP2 Metric:      31.99u       0.01s      31.97w     50 calls
+DFMP2 Aia Read:       0.02u       0.75s   0.791738w     50 calls
+DFMP2 (Q|A)(A|ia):      53.85u       0.00s      53.89w    100 calls
+DFMP2 Qia Write:       0.01u       2.37s   2.332015w     50 calls
+DFMP2 Qia Read:       0.68u       1.99s   2.624839w    350 calls
+DFMP2 Bia Write:       0.00u       2.16s   2.158277w     50 calls
+DFMP2 aiQ   :       0.45u       3.62s   4.103387w     50 calls
+DFMP2 Tij   :     539.30u      12.56s     551.55w     50 calls
+DFMP2 Cia Read:       0.00u       2.04s   1.990077w    250 calls
+DFMP2 I     :     403.56u       0.00s     403.38w    250 calls
+DFMP2 T2    :      42.71u       0.00s      42.67w    250 calls
+DFMP2 G     :     203.71u       0.00s     203.56w    200 calls
+DFMP2 Pab   :     100.03u       0.00s      99.96w    200 calls
+DFMP2 Gia Write:       0.00u       2.12s   2.156585w    100 calls
+DFMP2 Tab   :     234.75u       8.40s     243.03w     50 calls
+DFMP2 Qai Read:       0.62u       0.71s   1.410757w    100 calls
+DFMP2 Pij   :       9.47u       0.00s   9.448210w     50 calls
+DFMP2 gamma :      27.82u       2.59s      30.45w     50 calls
+DFMP2 Gia Read:       0.00u       1.32s   1.335310w    100 calls
+DFMP2 g     :      27.06u       0.00s      27.08w     50 calls
+DFMP2 Gia   :       2.19u       5.09s   7.224435w     50 calls
+DFMP2 aiG Write:       0.02u       1.31s   1.335692w     50 calls
+DFMP2 AB^x  :       9.52u       0.05s   9.622269w     50 calls
+DFMP2 Amn^x :    1605.31u       8.70s    1613.12w     50 calls
+DFMP2 L     :     770.30u       8.71s     778.65w     50 calls
+DFMP2 P     :       0.05u       0.14s   0.156973w     50 calls
+DFMP2 W     :       0.49u       0.09s   0.571399w     50 calls
+DFMP2 Z     :    4563.29u      24.85s    4585.88w     50 calls
+DFMP2 grad  :    2196.33u      22.48s    2217.66w     50 calls
+Grad: T     :       1.42u       0.00s   1.411003w     50 calls
+Grad: V     :      67.27u       0.27s      67.50w     50 calls
+Grad: S     :       0.72u       0.00s   0.651424w     50 calls
+Grad: JK    :    2119.59u      22.18s    2140.64w     50 calls
+CorrGrad: Amn:     400.94u      10.07s     410.85w     50 calls
+CorrGrad: AB:      59.50u       2.31s      61.77w     50 calls
+CorrGrad: UV:      27.97u       1.93s      29.90w     50 calls
+CorrGrad: ABx:       9.35u       0.05s   9.414312w     50 calls
+CorrGrad: Amnx:    1613.49u       7.08s    1619.64w     50 calls
+
+***********************************************************
