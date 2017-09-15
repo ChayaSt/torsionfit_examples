@@ -1,6 +1,6 @@
 import torsionfit.backends.sqlite_plus as sqlite_plus
 from pymc import MCMC
-from parmed.charmm import CharmmParameterSet
+from parmed.charmm import CharmmParameterSet, CharmmPsfFile
 from torsionfit.database import qmdatabase as ScanSet
 import torsionfit.model as Model
 import torsionfit.parameters as par
@@ -22,10 +22,8 @@ if __name__ == "__main__":
                         help='name of sqlite database to store samples')
     parser.add_argument('-i', '--iterations', type=int, default=10000,
                         help='How many iterations to run')
-    parser.add_argument('-r', '--repeats', type=int,
-                        help='number of repeat')
-    parser.add_argument('-t', '--tau', type=float, default=1.0,
-                        help='tau value for gaussian prior on k')
+    parser.add_argument('-t', '--tau', type=str, default='mult',
+                        help='seperate tau for each K')
 
     args = parser.parse_args()
     print(args)
@@ -33,16 +31,23 @@ if __name__ == "__main__":
     param_to_opt=[('CG331', 'CG321', 'CG321', 'CG331'),
                 ('HGA2', 'CG321', 'CG321', 'HGA2'),
                 ('CG331', 'CG321', 'CG321', 'HGA2')]
-    param = CharmmParameterSet('../../../../../../data/charmm_ff/top_all36_cgenff.rtf',
-                               '../../../../../../data/charmm_ff/par_all36_cgenff.prm')
-    structure = '../../../../../structure/butane.psf'
-    scan = '../../../../../torsion_scans/MP2_torsion_scan/'
 
-    butane_scan = ScanSet.parse_psi4_out(scan, structure)
+    param = CharmmParameterSet('../../../../../data/charmm_ff/top_all36_cgenff.rtf',
+                               '../../../../../data/charmm_ff/par_all36_cgenff.prm')
+    structure = '../../../../structure/butane.psf'
+    structure_parmed = CharmmPsfFile(structure)
+    scan = '../../../../torsion_scans/MP2_torsion_scan/'
+
+    par.turn_off_params(param=param, structure=structure_parmed, dihedral=param_to_opt, copy=False)
+
+    butane_scan = ScanSet.parse_psi4_out(scan, structure, pattern='*.out2')
     optimized = butane_scan.remove_nonoptimized()
 
+    optimized.compute_energy(param)
+    optimized.build_phis(param_to_opt)
+
     model = Model.TorsionFitModel(param=param, frags=optimized, init_random=True,
-                                  param_to_opt=param_to_opt, rj=True, sample_n5=True)
+                                  param_to_opt=param_to_opt, rj=args.reversible_jump, tau=args.tau)
     sampler = MCMC(model.pymc_parameters, db=sqlite_plus, dbname=args.db_name, verbose=5)
 
     sampler.sample(args.iterations)
