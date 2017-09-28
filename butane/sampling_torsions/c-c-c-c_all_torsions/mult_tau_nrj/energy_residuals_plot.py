@@ -31,9 +31,9 @@ param_tor_off = par.turn_off_params(param=param, structure=struct_parmed, dihedr
 
 
 # Load samplers
-dbs = OrderedDict()
-for i in range(25):
-    dbs['db_{}'.format(i)] = sqlite_plus.load('c-c-c-c_all_10000000_{}/c-c-c-c_all_10000000_{}.sqlite'.format(i, i))
+#dbs = OrderedDict()
+#for i in range(25):
+#    dbs['db_{}'.format(i)] = sqlite_plus.load('c-c-c-c_all_10000000_{}/c-c-c-c_all_10000000_{}.sqlite'.format(i, i))
 
 butane = ScanSet.parse_psi4_out(scan, structure, pattern='*.out2')
 optimized = butane.remove_nonoptimized()
@@ -55,10 +55,11 @@ par.add_missing(param_list=dih_list, param=new_param, sample_n5=True)
 par.set_phase_0(dih_list, new_param)
 with PdfPages('Energy_residuals_rj_mult.pdf') as pdf:
     # Update parameters
-    for db in dbs:
+    for i in range(25):
+        db = sqlite_plus.load('c-c-c-c_all_10000000_{}/c-c-c-c_all_10000000_{}.sqlite'.format(i, i))
         plt.figure()
         plt.subplot(1, 2, 1)
-        par.update_param_from_sample(param_list=dih_list, param=new_param, db=dbs[db], n_5=True, rj=False, model_type='numpy')
+        par.update_param_from_sample(param_list=dih_list, param=new_param, db=db, n_5=True, rj=False, model_type='numpy')
         new_struct.compute_energy(new_param)
 
         plt.plot(optimized.angles, optimized.qm_energy, 'o', color='red', label='QM')
@@ -79,6 +80,7 @@ with PdfPages('Energy_residuals_rj_mult.pdf') as pdf:
         plt.legend()
         plt.title('Residual Energy {}'.format(db))
         pdf.savefig()
+        del db
 
 
 
