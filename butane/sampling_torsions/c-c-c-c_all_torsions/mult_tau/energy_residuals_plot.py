@@ -81,12 +81,6 @@ with PdfPages('Energy_residuals_rj_mult.pdf') as pdf:
         pdf.savefig()
 
 
-# In[14]:
-
-# Look at fit
-
-
-# In[ ]:
 
 
 
