@@ -53,7 +53,7 @@ new_struct = butane.remove_nonoptimized()
 # parameterize with db_0
 par.add_missing(param_list=dih_list, param=new_param, sample_n5=True)
 par.set_phase_0(dih_list, new_param)
-with PdfPages('Energy_fit_residuals.pdf') as pdf:
+with PdfPages('Energy_residuals_rj_mult.pdf') as pdf:
     # Update parameters
     for db in dbs:
         plt.figure()
