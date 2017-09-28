@@ -1,5 +1,6 @@
 
-
+import matplotlib
+matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from torsionfit.database import qmdatabase as ScanSet
 from parmed.charmm import CharmmParameterSet, CharmmPsfFile
@@ -81,6 +82,7 @@ with PdfPages('Energy_residuals_rj_mult.pdf') as pdf:
         plt.legend()
         plt.title('Residual Energy {}'.format(db))
         pdf.savefig()
+        plt.close()
         del db
 
 
