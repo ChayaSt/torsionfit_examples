@@ -4,7 +4,8 @@ The functional for torsion energy is given as follows:
 
 ![](fourier_series.png?raw=true)
 
-Where n is the frequency and i is the torsion. In this work, n is truncated at 6.
+Where n is the frequency, m is the torsion type and i is the torsion. In this work, 
+n is truncated at 6.
 
 When only one torsion of a specific torsion type exists in molecule, the curve that
 arises from adding the frequencies for that torsion is usually as expected. 
