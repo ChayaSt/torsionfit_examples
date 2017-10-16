@@ -8,12 +8,14 @@ Where n is the frequency, m is the torsion type and i is the torsion. In this wo
 n is truncated at 6.
 
 When only one torsion of a specific torsion type exists in molecule, the curve that
-arises from adding the frequencies for that torsion is usually as expected. 
+arises from adding the frequencies does not have high symmetry. 
 `CG331_CG321_CG321_CG331_sparse.pdf` shows the curves for each frequency with `K_n=1`
 for the C3-C2-C2-C3 torsion type in butane with torsion angles from 0 - 2pi. 
 `CG331_CG321_CG321_CG331.pdf` shows all different combinations possible with each K
 being either 0, 1 or -1. While the sums are unique, some are pretty similar in energy as 
-seen in `CG331_CG321_CG321_CG331_sim_e.pdf`
+seen in `CG331_CG321_CG321_CG331_sim_e.pdf`. However, this is not symmetric and the 
+posteriors for K look very consistent when only this one torsion is fit. (figures 
+are in the `sampling_torsions\` directory. 
 
 However, the H2-C3-C3-H2 torsion type occurs 4 times in butane. When the C3-C2-C2-C3
 torsion type angle goes from 0-2pi, 2 of the H2-C3-C3-H2 torsion type angles go from 0-2pi 
