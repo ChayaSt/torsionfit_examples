@@ -1,6 +1,6 @@
 ## Cancellation of terms in torsion functional
 
-The functional for torsion energy is given as follows:
+The functional for torsion energy for a torsion type is given as follows:
 
 ![](fourier_series.png?raw=true)
 
