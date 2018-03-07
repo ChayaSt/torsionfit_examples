@@ -18,4 +18,6 @@ If it is more than a give threshold, continue to the next bond (recursively)
 * `kinase_inhibitors.smi` - smi for FDA approved kinase inhibitors
 * `*.pdf` - visualization of the fragmentation
 * `nrotor_n.smi` - smi files for fragments with n rotors
+* `Openeye_wibergbondorder.ipynb` - look at the variance of WBO with respect to conformations.
+* `conf1.png`, `conf_all.png` - WBO usign 1 conformer vs using 83 conformers. 
 
