@@ -1,6 +1,6 @@
 import json
 import os
-import fileinput
+import subprocess
 from fragmenter import utils, torsions
 from openeye import oechem
 from openmoltools import openeye
@@ -53,6 +53,9 @@ for mol in mollist:
         with open(bsub_file, 'w') as file:
             file.write(filedata)
         #change directory and submit job
+        os.chdir(os.path.join(os.getcwd(), name))
+        subprocess.Popen("bsub {}_{}_bond_order.lfs".format(name, str(i)))
+        os.chdir("..")
 
 # import numpy as np
 # times = np.asarray(atom_map_time)
