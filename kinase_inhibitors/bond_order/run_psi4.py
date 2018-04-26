@@ -10,9 +10,9 @@ if __name__ == "__main__":
     args = parser.parse_args()
     infile = args.infile
     json_data = json.load(open(infile, 'r'))
-
+    
     psi4.json_wrapper.run_json(json_data)
-
+    
     outfile_name = infile.replace('input', 'output')
     outfile = open(outfile_name, 'w')
     json.dump(json_data, outfile, indent=4, sort_keys=True)
